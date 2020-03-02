@@ -1,12 +1,21 @@
 import React from 'react';
 import SignIn from './components/SignIn'
-import logo from './logo.svg';
+import SignUp from './components/SignUp'
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <SignIn />
+      <Switch>
+        <Route exact path='/'>
+          <SignIn />
+        </Route>
+
+        <Route path='/sign-up'>
+          <SignUp />
+        </Route>
+      </Switch>
     </div>
   );
 }

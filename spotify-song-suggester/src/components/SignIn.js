@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import * as Yup from 'yup'
 import axios from 'axios'
 
 const SignIn = () => {
-
     const [user, setUser] = useState({
         username: '',
         password: ''
     })
+
     const handleChange = event => {
         setUser({ ...user, [event.target.name]: event.target.value })
         console.log(user)
@@ -24,6 +25,12 @@ const SignIn = () => {
                 console.log(err)
             })
     }
+
+    const history = useHistory()
+    const routeToSignUp = () => {
+        history.push('/sign-up')
+    }
+
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -32,6 +39,7 @@ const SignIn = () => {
                 <label htmlFor="password">Password</label>
                 <input onChange={handleChange} id='password' type='password' name='password' />
                 <button type="submit">Sign In</button>
+                <button onClick={routeToSignUp}>Sign Up</button>
             </form>
         </div>
     )
