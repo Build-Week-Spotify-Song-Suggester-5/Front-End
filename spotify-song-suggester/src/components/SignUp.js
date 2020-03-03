@@ -17,7 +17,7 @@ const SignUp = () => {
 
     })
 
-    const toggleTrueFalse = () => setToggle(!toggle)
+    const toggleTrueFalse = () => setToggle(false)
 
     const handleChange = event => {
         setNewUser({ ...newUser, [event.target.name]: event.target.value })

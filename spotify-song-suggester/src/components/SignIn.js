@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import axios from 'axios'
 
 const SignIn = () => {
+    const [toggle, setToggle] = useState(true)
     const [user, setUser] = useState({
         username: '',
         password: ''
@@ -12,6 +13,8 @@ const SignIn = () => {
     const routeToSignUp = () => {
         history.push('/sign-up')
     }
+
+    const toggleTrueFalse = () => setToggle(false)
 
     const handleChange = event => {
         setUser({ ...user, [event.target.name]: event.target.value })
@@ -28,6 +31,7 @@ const SignIn = () => {
             })
             .catch(err => {
                 console.log(err)
+                toggleTrueFalse()
             })
     }
 
@@ -38,6 +42,7 @@ const SignIn = () => {
             <header className='sign-in'>
                 <div className='greenbar'><h1>Spotify Song suggestor</h1></div>
                 <h2>Sign In</h2>
+                <p className={`${toggle ? "is-displayed" : ''}`}>Incorrect Username or Password</p>
             </header>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">User Name</label>
