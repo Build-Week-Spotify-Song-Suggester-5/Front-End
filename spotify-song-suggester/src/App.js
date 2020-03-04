@@ -1,23 +1,71 @@
-import React from 'react';
+import React from "react";
+import './App.css'
+// import Login from "./components/Login";
+// import Register from "./components/Register";
+import PrivateRoute from "./components/PrivateRoute.js";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Dashboard } from "./components/Dashboard";
+import Nav from "./components/Nav";
+
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
-import { Route, Switch } from 'react-router-dom'
-import './App.css';
+
+// import Search from "./components/Search";
+// import TestSearch from './components/TestSearch';
+// import TestResultCard from './components/TestResultCard'
 
 function App() {
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path='/'>
-          <SignIn />
-        </Route>
+    <Router>
+      <Nav />
+      <div className="App">
+        {/* <SignUp /> */}
+        <Switch>
+          <Route exact path="/dashboard" component={Dashboard} />
+          {/* <PrivateRoute exact path="/editfavorites/:id" component={EditFavorites} /> */}
+          <Route path="/login" component={SignIn} />
+          <Route path="/" component={SignUp} />
+          
+        </Switch>
+      </div>
+    </Router>
 
-        <Route path='/sign-up'>
-          <SignUp />
-        </Route>
-      </Switch>
-    </div>
+
+
   );
 }
 
 export default App;
+
+
+
+
+// import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+// import SongList  from './components/SongList';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       {/* <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header> */}
+
+//       <SongList />
+//     </div>
+//   );
+// }
+
+// export default App;

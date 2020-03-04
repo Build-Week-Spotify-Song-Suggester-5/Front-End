@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+import * as Yup from 'yup'
 let yup = require('yup')
 
-let schema = yup.object().shape({
-    username: yup.string().required().length(3),
-    password: yup.string().required().length(6)
+let schema = Yup.object().shape({
+    username: yup.string().min(3).required(),
+
+    password: yup.string().min(6).required()
 })
 
 
+
 const SignUp = () => {
+
     const [toggle, setToggle] = useState(true)
     const [newUser, setNewUser] = useState({
         username: '',
@@ -17,34 +21,31 @@ const SignUp = () => {
 
     })
 
-    const toggleTrueFalse = () => setToggle(!toggle)
+    const toggleTrueFalse = () => setToggle(false)
 
     const handleChange = event => {
         setNewUser({ ...newUser, [event.target.name]: event.target.value })
-        console.log(newUser)
     }
-
-
 
     const onSubmit = event => {
         event.preventDefault()
+        console.log(newUser)
         schema.isValid(newUser).then(valid => {
             console.log(valid)
             valid ? (
                 axios.post('https://lambda-spotify-song-suggester.herokuapp.com/api/auth/register', newUser)
                     .then(response => {
                         console.log(response)
+
                     })
-                    .catch(err => {
-                        console.log(err)
-                    })
-            ) : toggleTrueFalse()
+            ) : console.log(schema)
+
         })
     }
 
     const history = useHistory()
     const routeToSignIn = () => {
-        history.push('/')
+        history.push('/Login')
     }
 
 
@@ -56,7 +57,7 @@ const SignUp = () => {
             <header className='sign-in'>
                 <div className='greenbar'><h1>Spotify Song suggestor</h1></div>
                 <h2>Sign Up</h2>
-                <p className={`${toggle ? "is-displayed" : ''}`}>Fields Incomplete</p>
+                <p className={`${toggle ? "is-displayed" : ''}`}>Please Fill Out Fields Correctly{}</p>
             </header>
             <form onSubmit={onSubmit}>
                 <label htmlFor='username'>User Name</label>
