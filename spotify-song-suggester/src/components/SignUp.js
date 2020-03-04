@@ -38,7 +38,7 @@ const SignUp = () => {
                         console.log(response)
 
                     })
-            ) : console.log(schema)
+            ) : toggleTrueFalse()
 
         })
     }

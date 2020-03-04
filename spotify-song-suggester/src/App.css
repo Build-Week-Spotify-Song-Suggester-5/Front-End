@@ -36,35 +36,3 @@ form{
   padding-top: 2%;
   border: 1px black solid;
 }
-
-input{
-  width: 60%;
-  margin: 5% auto;
-  border: black 1px solid;
-  text-align: center;
-}
-
-.btn-container{
-  display: flex;
-  justify-content: space-around;
-  margin: 10% 0 5% 0;
-}
-
-form button{
-  border-radius: 20px;
-}
-
-p{
-  background-color: red;
-  width: fit-content;
-  margin:2% auto;
-  padding: 1%;
-  border: 1px white solid;
-  color: white;
-}
-
-.is-displayed{
-  display: none;
-}
-
-
