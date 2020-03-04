@@ -45,7 +45,7 @@ const SignUp = () => {
 
     const history = useHistory()
     const routeToSignIn = () => {
-        history.push('/')
+        history.push('/Login')
     }
 
 

@@ -7,20 +7,20 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 
 
-export const userLogin = credentials => dispatch => {
-  dispatch({ type: LOGIN_START, payload: credentials }); // Payload = creds
-  axiosWithAuth()
-    .post("/auth/login", credentials) // TODO Need correct endpoints
-    .then(res => {
-      // Store token
-      localStorage.setItem("token", res.data.token);
-      dispatch({ type: LOGIN_SUCCESS, payload: { token: res.data.token } });
-    })
-    .catch(err => {
-      console.log("Error from Login:", err);
-      dispatch({ type: LOGIN_FAILURE, payload: err.data }); // Payload = err msg
-    });
-};
+// export const userLogin = credentials => dispatch => {
+//   dispatch({ type: LOGIN_START, payload: credentials }); // Payload = creds
+//   axiosWithAuth()
+//     .post("/auth/login", credentials) // TODO Need correct endpoints
+//     .then(res => {
+//       // Store token
+//       localStorage.setItem("token", res.data.token);
+//       dispatch({ type: LOGIN_SUCCESS, payload: { token: res.data.token } });
+//     })
+//     .catch(err => {
+//       console.log("Error from Login:", err);
+//       dispatch({ type: LOGIN_FAILURE, payload: err.data }); // Payload = err msg
+//     });
+// };
 
 // Fetching Music from API
 export const FETCH_MUSIC_START = "FETCH_MUSIC_START";

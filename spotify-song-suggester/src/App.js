@@ -19,14 +19,12 @@ function App() {
     <Router>
       <Nav />
       <div className="App">
+        {/* <SignUp /> */}
         <Switch>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          {/* <PrivateRoute exact path="/search" component={Search} />
-          <PrivateRoute exact path="/testsearch" component={TestSearch} />
-          <PrivateRoute path="/results" component={TestResultCard}/> */}
+          <Route exact path="/dashboard" component={Dashboard} />
           {/* <PrivateRoute exact path="/editfavorites/:id" component={EditFavorites} /> */}
-          {/* <Route path="/login" component={Login} />
-          <Route path="/" component={Register} /> */}
+          <Route path="/login" component={SignIn} />
+          <Route path="/" component={SignUp} />
           
         </Switch>
       </div>
