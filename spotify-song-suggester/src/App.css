@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.jams {
+  display: flex;
+  flex-direction: column;
+  margin: 2px auto;
+  width: 20%;
+  border: 1px solid black
+
+}
+
+.SongsButton {
+  display: flex;
+flex-wrap: wrap;}
+
+/* .button1 {
+  margin-bottom: 0;
+} */

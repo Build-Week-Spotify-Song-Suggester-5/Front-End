@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth'
 import FavoriteCard from './FavoriteCard'
-import {songs} from "./DummyData";
+// import {songs} from "./DummyData";
 
 function FavoriteList(){
     const [data, setData] = useState([]);
     console.log(songs)
         useEffect(() =>{
             axiosWithAuth()
-            .get("accounts/favorites")
+            .get("")
             .then(response =>{
                 setData(response.data);
                 console.log(response)

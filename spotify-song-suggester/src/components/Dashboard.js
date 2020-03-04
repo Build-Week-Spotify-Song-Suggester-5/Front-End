@@ -11,7 +11,7 @@ export const Dashboard = props => {
     <div>
       <div className="dashboard">
         <h1>Welcome to your Dashboard!</h1>
-        <h1>Here is your Favorite List:</h1>
+        <h1>Choose from list of songs below:</h1>
       </div>
       <EditPlaylist />
     </div>

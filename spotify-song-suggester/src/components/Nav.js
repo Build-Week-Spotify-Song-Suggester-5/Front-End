@@ -27,12 +27,12 @@ const Nav = props => {
           <li className="link">
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
-          <li className="link">
+          {/* <li className="link">
            <NavLink  to="/search">Search</NavLink>
           </li> 
           <li className="link">
             <NavLink  to="/testsearch">TestSearch</NavLink>
-          </li> 
+          </li>  */}
 
           {/* TODO Need to get endpoint to Marketing page */}
           <li className="link">
@@ -52,7 +52,7 @@ const Nav = props => {
           rel="noopener noreferrer"
           href=""
         >
-          Symphinity
+          Songs
         </a>
       </header>
     );
