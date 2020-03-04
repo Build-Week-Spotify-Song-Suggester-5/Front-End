@@ -25,7 +25,7 @@ function SongList() {
   //   .catch(error => {
   //     console.log(error);
   //   })
-  // }, [])
+  // }, [trackId]);
 
   const findSong = () => {
     axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/0BRjO6ga9RKCKjfDqeFgWV`)
@@ -36,7 +36,6 @@ function SongList() {
       console.log(error);
     })
   }
-
  
   const songList = songs.map((song, i) => {
     return (
