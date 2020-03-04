@@ -24,7 +24,7 @@ const SignIn = () => {
         axios.post('https://lambda-spotify-song-suggester.herokuapp.com/api/auth/login', user)
             .then(response => {
                 console.log(response)
-                history.push('/sign-up')
+                history.push('/dashboard')
             })
             .catch(err => {
                 console.log(err)
