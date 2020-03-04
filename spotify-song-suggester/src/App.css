@@ -2,39 +2,56 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body{
+  background-image: url(https://images.unsplash.com/photo-1550684656-77baedef4775?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.greenbar{
+background-color: #008D06;
+color: #008D06;
+width: 100vw;
+}
+.greenbar h1{
+  color: #008D06;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sign-in h2{
+  border: 1px black solid;
+  width: 38%;
+  margin: 5% auto;
+  color: #008D06;
+  background-color: white;
+  border-radius: 20px;
+}
+
+form{
+  background-color: #1B1B1B;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 40%;
+ 
+  margin: auto;
   color: white;
+  padding-top: 2%;
+  border: 1px black solid;
 }
 
-.App-link {
-  color: #61dafb;
+input{
+  width: 60%;
+  margin: 5% auto;
+  border: black 1px solid;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 10% 0 5% 0;
+}
+
+form button{
+  border-radius: 20px;
 }
 
 .jams {
@@ -53,3 +70,17 @@ flex-wrap: wrap;}
 /* .button1 {
   margin-bottom: 0;
 } */
+p{
+  background-color: red;
+  width: fit-content;
+  margin:2% auto;
+  padding: 1%;
+  border: 1px white solid;
+  color: white;
+}
+
+.is-displayed{
+  display: none;
+}
+
+

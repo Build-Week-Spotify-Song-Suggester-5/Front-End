@@ -6,6 +6,10 @@ import PrivateRoute from "./components/PrivateRoute.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Dashboard } from "./components/Dashboard";
 import Nav from "./components/Nav";
+
+import SignIn from './components/SignIn'
+import SignUp from './components/SignUp'
+
 // import Search from "./components/Search";
 // import TestSearch from './components/TestSearch';
 // import TestResultCard from './components/TestResultCard'
@@ -27,6 +31,9 @@ function App() {
         </Switch>
       </div>
     </Router>
+
+
+
   );
 }
 
