@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import * as Yup from 'yup'
 import axios from 'axios'
 
 const SignIn = () => {
+    const [toggle, setToggle] = useState(true)
     const [user, setUser] = useState({
         username: '',
         password: ''
@@ -13,14 +13,14 @@ const SignIn = () => {
         history.push('/sign-up')
     }
 
+    const toggleTrueFalse = () => setToggle(false)
+
     const handleChange = event => {
         setUser({ ...user, [event.target.name]: event.target.value })
-        console.log(user)
     }
 
     const handleSubmit = event => {
         event.preventDefault()
-        console.log(user)
         axios.post('https://lambda-spotify-song-suggester.herokuapp.com/api/auth/login', user)
             .then(response => {
                 console.log(response)
@@ -28,16 +28,16 @@ const SignIn = () => {
             })
             .catch(err => {
                 console.log(err)
+                toggleTrueFalse()
             })
     }
-
-
 
     return (
         <div>
             <header className='sign-in'>
                 <div className='greenbar'><h1>Spotify Song suggestor</h1></div>
                 <h2>Sign In</h2>
+                <p className={`${toggle ? "is-displayed" : ''}`}>Incorrect Username or Password</p>
             </header>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">User Name</label>
@@ -52,8 +52,5 @@ const SignIn = () => {
         </div>
     )
 }
-
-let yup = require('yup')
-
 
 export default SignIn
