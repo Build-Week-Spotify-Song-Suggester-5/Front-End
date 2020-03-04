@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import * as Yup from 'yup'
 import axios from 'axios'
 
 const SignIn = () => {
@@ -18,12 +17,10 @@ const SignIn = () => {
 
     const handleChange = event => {
         setUser({ ...user, [event.target.name]: event.target.value })
-        console.log(user)
     }
 
     const handleSubmit = event => {
         event.preventDefault()
-        console.log(user)
         axios.post('https://lambda-spotify-song-suggester.herokuapp.com/api/auth/login', user)
             .then(response => {
                 console.log(response)
@@ -34,8 +31,6 @@ const SignIn = () => {
                 toggleTrueFalse()
             })
     }
-
-
 
     return (
         <div>
@@ -57,8 +52,5 @@ const SignIn = () => {
         </div>
     )
 }
-
-let yup = require('yup')
-
 
 export default SignIn
