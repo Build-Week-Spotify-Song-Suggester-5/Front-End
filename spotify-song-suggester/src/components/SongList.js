@@ -16,40 +16,29 @@ function SongList() {
     })
   }, []);
 
-  // const [trackId, setTrackId] = useState('');
-  // useEffect(() => {
-  //   axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId}`)
-  //   .then(response => {
-  //     console.log(response);
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   })
-  // }, [trackId]);
-
-  const findSong = () => {
-    axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/0BRjO6ga9RKCKjfDqeFgWV`)
+  const [trackId, setTrackId] = useState('');
+  useEffect(() => {
+    axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId}`)
     .then(response => {
       console.log(response);
     })
     .catch(error => {
       console.log(error);
     })
-  }
+  }, [trackId]);
  
   const songList = songs.map((song, i) => {
     return (
         <div key={i}>
             <h2>{song.track_name}</h2>
             <p>{song.artist_name}</p>
-            <button onClick={() => console.log(song.track_id)}>Find Similar Songs</button>
+            <button onClick={() => setTrackId(song.track_id)}>Find Similar Songs</button>
         </div>
     )
   });
 
   return (
     <div className="SongsButton">
-      {findSong()}
       {songList}
     </div>
   );
