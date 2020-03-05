@@ -11,12 +11,12 @@ function EditPlayList() {
   const [songs, setSongs] = useState([]);
   useEffect(() => {
     axios.get('https://lambda-spotify-song-suggester.herokuapp.com/api/songs')
-    .then(response => {
+      .then(response => {
         setSongs(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-    })
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }, []);
   // const findSong = () => {
   //   axios.get('')
@@ -29,14 +29,16 @@ function EditPlayList() {
   // }
   const songList = songs.map((song, i) => {
     return (
-        <div className='jams' key={i}>
-            <h2>{song.track_name}</h2>
-            <p>{song.artist_name}</p>
-            {/* <div classname='button1'> */}
-            <button onClick={() => console.log(song.track_id)}>Find Similar Songs</button>
-            <button>Add to Favorites</button>
-            {/* </div> */}
+      <div className='jams' key={i}>
+        <h2>{song.track_name}</h2>
+        <p>{song.artist_name}</p>
+        {/* <div classname='button1'> */}
+        <div className='btn-container'>
+          <button className='btn' onClick={() => console.log(song.track_id)}>Find Similar Songs</button>
+          <button className='btn'>Add to Favorites</button>
+          {/* </div> */}
         </div>
+      </div>
     )
   });
   return (
