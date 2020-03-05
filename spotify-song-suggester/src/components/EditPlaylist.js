@@ -54,8 +54,8 @@ function EditPlayList() {
 
       <SuggestedSongs suggestedSongs={suggestedSongs} title={trackId.track_name} />
       <div className="SongsButton">
-      {songList}
-    </div>
+        {songList}
+      </div>
     </div>
 
   );
