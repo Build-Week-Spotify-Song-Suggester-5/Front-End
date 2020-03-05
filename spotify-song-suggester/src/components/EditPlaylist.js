@@ -30,6 +30,12 @@ function EditPlayList() {
     })
   }, [trackId]);
 
+  const [saved, setSaved] = useState([]);
+  const saveSong = (song) => {
+    setSaved([...saved, song]);
+  }
+  console.log(saved);
+
   const songList = songs.map((song, i) => {
     return (
       <div className='jams' key={i}>
@@ -38,7 +44,7 @@ function EditPlayList() {
         {/* <div classname='button1'> */}
         <div className='btn-container'>
           <button className='btn' onClick={() => setTrackId(song.id)}>Find Similar Songs</button>
-          <button className='btn'>Add to Favorites</button>
+          <button className='btn' onClick={() => saveSong(song)}>Add to Favorites</button>
           {/* </div> */}
         </div>
       </div>
@@ -47,6 +53,7 @@ function EditPlayList() {
   return (
     <div className="SongsButton">
       {songList}
+      {/* <SavedList saved={saved} /> */}
     </div>
   );
 }
