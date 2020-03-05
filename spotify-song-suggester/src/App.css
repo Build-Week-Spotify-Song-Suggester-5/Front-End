@@ -124,3 +124,7 @@ header.dashboard{
 .suggestions {
   color: white;
 }
+
+.suggestions div {
+  display: flex;
+}

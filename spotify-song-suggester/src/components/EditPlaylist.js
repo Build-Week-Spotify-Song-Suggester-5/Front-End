@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import ReactDOM from "react-dom";
 import NewSongForm from "../components/NewSongForm";
 import Table from "../components/Table";
 import EditSongForm from "../components/EditSongForm";
+import SuggestedSongs from "../components/SuggestedSongs";
+
 import axios from 'axios'
 // Dummy data
 
@@ -20,10 +24,12 @@ function EditPlayList() {
   }, []);
 
   const [trackId, setTrackId] = useState('');
+  const [suggestedSongs, setSuggestedSongs] = useState([])
   useEffect(() => {
     axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId}`)
     .then(response => {
       console.log(response.data);
+      setSuggestedSongs(response.data);
     })
     .catch(error => {
       console.log(error);
@@ -45,9 +51,16 @@ function EditPlayList() {
     )
   });
   return (
-    <div className="SongsButton">
+    <div>
+      {/* <Link to="/suggested-songs" className="suggestions">
+        <h1>Suggested Songs</h1>
+      </Link> */}
+      <SuggestedSongs suggestedSongs={suggestedSongs} />
+      <div className="SongsButton">
       {songList}
     </div>
+    </div>
+
   );
 }
 export default EditPlayList;

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import EditPlaylist from "./EditPlaylist";
 import Nav from './Nav'
@@ -16,9 +15,6 @@ export const Dashboard = props => {
         <h1>Welcome to your Dashboard!</h1>
         <h1>Choose from list of songs below:</h1>
       </header>
-      <Link to="/suggested-songs" className="suggestions">
-        <h1>Suggested Songs</h1>
-      </Link>
       <EditPlaylist />
     </div>
   );
