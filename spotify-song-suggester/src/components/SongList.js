@@ -20,7 +20,7 @@ function SongList() {
   useEffect(() => {
     axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId}`)
     .then(response => {
-      console.log(response);
+      console.log(response.data);
     })
     .catch(error => {
       console.log(error);
@@ -32,7 +32,7 @@ function SongList() {
         <div key={i}>
             <h2>{song.track_name}</h2>
             <p>{song.artist_name}</p>
-            <button onClick={() => setTrackId(song.track_id)}>Find Similar Songs</button>
+            <button onClick={() => setTrackId(song.id)}>Find Similar Songs</button>
         </div>
     )
   });
