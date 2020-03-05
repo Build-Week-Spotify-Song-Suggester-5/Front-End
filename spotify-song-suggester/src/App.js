@@ -9,6 +9,8 @@ import { Dashboard } from "./components/Dashboard";
 
 import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
+import SuggestedSongs from './components/SuggestedSongs'
+
 
 // import Search from "./components/Search";
 // import TestSearch from './components/TestSearch';
@@ -21,6 +23,7 @@ function App() {
         {/* <SignUp /> */}
         <Switch>
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/suggested-songs" component={SuggestedSongs} />
           {/* <PrivateRoute exact path="/editfavorites/:id" component={EditFavorites} /> */}
           <Route path="/login" component={SignIn} />
           <Route path="/" component={SignUp} />
