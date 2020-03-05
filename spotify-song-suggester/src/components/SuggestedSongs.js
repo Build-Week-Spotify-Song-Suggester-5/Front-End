@@ -15,6 +15,7 @@ const songList = props.suggestedSongs.map((song, i) => {
   return (
     <div className="suggestions">
         <h1>Suggested Songs</h1>
+        <h2>{props.title}</h2>
         <div>
         {songList}  
         </div>

@@ -26,7 +26,7 @@ function EditPlayList() {
   const [trackId, setTrackId] = useState('');
   const [suggestedSongs, setSuggestedSongs] = useState([])
   useEffect(() => {
-    axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId}`)
+    axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId.id}`)
     .then(response => {
       console.log(response.data);
       setSuggestedSongs(response.data);
@@ -41,21 +41,18 @@ function EditPlayList() {
       <div className='jams' key={i}>
         <h2>{song.track_name}</h2>
         <p>{song.artist_name}</p>
-        {/* <div classname='button1'> */}
         <div className='btn-container'>
-          <button className='btn' onClick={() => setTrackId(song.id)}>Find Similar Songs</button>
+          <button className='btn' onClick={() => setTrackId(song)}>Find Similar Songs</button>
           <button className='btn'>Add to Favorites</button>
-          {/* </div> */}
         </div>
       </div>
     )
   });
+  console.log(trackId.track_name);
   return (
     <div>
-      {/* <Link to="/suggested-songs" className="suggestions">
-        <h1>Suggested Songs</h1>
-      </Link> */}
-      <SuggestedSongs suggestedSongs={suggestedSongs} />
+
+      <SuggestedSongs suggestedSongs={suggestedSongs} title={trackId.track_name} />
       <div className="SongsButton">
       {songList}
     </div>
