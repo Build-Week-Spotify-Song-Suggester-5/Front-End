@@ -37,7 +37,7 @@ function EditPlayList() {
         <p>{song.artist_name}</p>
         {/* <div classname='button1'> */}
         <div className='btn-container'>
-          <button onClick={() => setTrackId(song.id)}>Find Similar Songs</button>
+          <button className='btn' onClick={() => setTrackId(song.id)}>Find Similar Songs</button>
           <button className='btn'>Add to Favorites</button>
           {/* </div> */}
         </div>
