@@ -4,6 +4,14 @@ import axios from 'axios'
 import * as Yup from 'yup'
 let yup = require('yup')
 
+Yup.setLocale({
+    string: {
+        default: 'Please Fill Out Form',
+        username: 'username is invalid',
+        password: 'password is invalid'
+    }
+})
+
 let schema = Yup.object().shape({
     username: yup.string().min(3).required(),
 
@@ -13,7 +21,7 @@ let schema = Yup.object().shape({
 
 
 const SignUp = () => {
-
+    const [error, setError] = useState('')
     const [toggle, setToggle] = useState(true)
     const [newUser, setNewUser] = useState({
         username: '',
@@ -36,9 +44,16 @@ const SignUp = () => {
                 axios.post('https://lambda-spotify-song-suggester.herokuapp.com/api/auth/register', newUser)
                     .then(response => {
                         console.log(response)
-
+                        history.push('/dashboard')
                     })
-            ) : console.log(schema)
+            ) : (
+                    schema.validate(newUser)
+                        .catch(err => {
+                            console.log(err)
+                            setError(err.errors)
+                            toggleTrueFalse()
+                        })
+                )
 
         })
     }
@@ -48,16 +63,12 @@ const SignUp = () => {
         history.push('/Login')
     }
 
-
-
-
-
     return (
         <div>
             <header className='sign-in'>
                 <div className='greenbar'><h1>Spotify Song suggestor</h1></div>
                 <h2>Sign Up</h2>
-                <p className={`${toggle ? "is-displayed" : ''}`}>Please Fill Out Fields Correctly{}</p>
+                <p className={`${toggle ? "is-displayed" : ''}`}>{error}</p>
             </header>
             <form onSubmit={onSubmit}>
                 <label htmlFor='username'>User Name</label>

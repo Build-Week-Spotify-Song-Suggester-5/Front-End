@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import EditPlaylist from "./EditPlaylist";
+import Nav from './Nav'
 
 export const Dashboard = props => {
   const id = props.match.params.id;
@@ -9,10 +10,11 @@ export const Dashboard = props => {
 
   return (
     <div>
-      <div className="dashboard">
+      <Nav />
+      <header className="dashboard">
         <h1>Welcome to your Dashboard!</h1>
         <h1>Choose from list of songs below:</h1>
-      </div>
+      </header>
       <EditPlaylist />
     </div>
   );

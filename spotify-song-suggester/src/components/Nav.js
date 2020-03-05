@@ -16,7 +16,7 @@ const Nav = props => {
         <label className="menu-icon" htmlFor="menu-btn">
           <div className="logo">
             <a className='anchor'
-            rel="noopener noreferrer"
+              rel="noopener noreferrer"
               href=""
             >
               Songs
@@ -47,14 +47,12 @@ const Nav = props => {
     // Unauthenticated user
     // STRETCH: Add page to "Get Involved"
     return (
-      <header className="header">
-        <a className="logo"
-          rel="noopener noreferrer"
-          href=""
-        >
-          Songs
-        </a>
-      </header>
+      <div className='navbar'>
+        <nav>
+          <NavLink to='/'>Sign Out</NavLink>
+          <NavLink to='/dashboard'>Dashboard</NavLink>
+        </nav>
+      </div>
     );
   }
 };
