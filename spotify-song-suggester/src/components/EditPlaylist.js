@@ -18,15 +18,18 @@ function EditPlayList() {
         console.log(error);
       })
   }, []);
-  // const findSong = () => {
-  //   axios.get('')
-  //     .then(response => {
-  //       console.log(response);
-  //     })
-  //     .catch(error => {
-  //       console.log(error);
-  //     })
-  // }
+
+  const [trackId, setTrackId] = useState('');
+  useEffect(() => {
+    axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId}`)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }, [trackId]);
+
   const songList = songs.map((song, i) => {
     return (
       <div className='jams' key={i}>
@@ -34,7 +37,7 @@ function EditPlayList() {
         <p>{song.artist_name}</p>
         {/* <div classname='button1'> */}
         <div className='btn-container'>
-          <button className='btn' onClick={() => console.log(song.track_id)}>Find Similar Songs</button>
+          <button onClick={() => setTrackId(song.id)}>Find Similar Songs</button>
           <button className='btn'>Add to Favorites</button>
           {/* </div> */}
         </div>
