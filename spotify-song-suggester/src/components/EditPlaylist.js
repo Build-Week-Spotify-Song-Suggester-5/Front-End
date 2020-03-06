@@ -43,7 +43,7 @@ function EditPlayList() {
   });
   console.log(trackId.track_name);
   const size = {
-    width: '80%',
+    width: '20%',
     height: 300,
   };
   const view = 'list'; // or 'coverart'
