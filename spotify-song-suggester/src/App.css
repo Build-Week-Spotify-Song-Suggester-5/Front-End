@@ -70,6 +70,12 @@ form button{
   border-radius: 20px;
 }
 
+.suggestions div{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
 .rec{
   display: flex;
   flex-direction: column;
@@ -81,14 +87,19 @@ form button{
   flex-wrap: wrap;
 }
 
-.suggestions div{
-  display: flex;
-  flex-wrap: wrap;
+.data-container{
+  background-color: #008D06;
+  margin-bottom: 2%;
+  border: white 1px solid;
+}
+
+p{
+  padding: 10%;
 }
 
 .SongsButton {
   display: flex;
-flex-wrap: wrap;}
+flex-wrap: wrap;}  
 
 /* .button1 {
   margin-bottom: 0;
