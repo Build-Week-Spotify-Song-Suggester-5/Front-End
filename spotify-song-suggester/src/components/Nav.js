@@ -51,7 +51,7 @@ const Nav = props => {
         <nav>
           <NavLink to='/'>Sign Out</NavLink>
           <NavLink to='/dashboard'>Dashboard</NavLink>
-          <NavLink to='https://build-week-spotify-song-suggester-5.github.io/Marketing-UI/'>Home</NavLink>
+          <a href='https://build-week-spotify-song-suggester-5.github.io/Marketing-UI/'>Home</a>
         </nav>
       </div>
     );
