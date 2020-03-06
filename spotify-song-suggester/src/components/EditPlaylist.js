@@ -47,7 +47,7 @@ function EditPlayList() {
         view='list'
         theme='black'
       />
-      <SuggestedSongs suggestedSongs={suggestedSongs} title={trackId.track_name} />
+      <SuggestedSongs suggestedSongs={suggestedSongs} title={trackId.track_name} setTrackId={setTrackId} />
       <div className="SongsButton">
         {songList}
       </div>
