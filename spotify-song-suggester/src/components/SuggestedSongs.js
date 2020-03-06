@@ -13,9 +13,9 @@ export const SuggestedSongs = props => {
   });
 
   return (
-    <div className="suggestions"> 
+    <div className="suggestions">
       <h1>Suggested Songs</h1>
-      <div>
+      <div className='data-container'>
         {songList}
       </div>
     </div>
