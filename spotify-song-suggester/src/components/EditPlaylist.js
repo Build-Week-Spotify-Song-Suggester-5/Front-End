@@ -40,20 +40,12 @@ function EditPlayList() {
     )
   });
 
-  const size = {
-    width: '20%',
-    height: 300,
-  };
-  const view = 'list';
-  const theme = 'black';
-
   return (
     <div>
       <SpotifyPlayer
         uri={`spotify:track:${trackId.track_id}`}
-        size={size}
-        view={view}
-        theme={theme}
+        view='list'
+        theme='black'
       />
       <SuggestedSongs suggestedSongs={suggestedSongs} title={trackId.track_name} />
       <div className="SongsButton">
