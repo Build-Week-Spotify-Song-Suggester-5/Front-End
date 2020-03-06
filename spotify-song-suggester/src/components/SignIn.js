@@ -35,7 +35,7 @@ const SignIn = () => {
     return (
         <div>
             <header className='sign-in'>
-                <div className='greenbar'>nicks component</div>
+                <div className='greenbar'><a href='https://build-week-spotify-song-suggester-5.github.io/Marketing-UI/'>Home</a></div>
                 <h2>Sign In</h2>
                 <p className={`${toggle ? "is-displayed" : ''}`}>Incorrect Username or Password</p>
             </header>
