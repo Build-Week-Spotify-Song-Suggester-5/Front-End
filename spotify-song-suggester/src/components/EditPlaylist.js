@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import SpotifyPlayer from 'react-spotify-player';
 import SuggestedSongs from "../components/SuggestedSongs";
 import axios from 'axios'
-
 
 function EditPlayList() {
   const [songs, setSongs] = useState([]);
@@ -41,13 +39,14 @@ function EditPlayList() {
       </div>
     )
   });
-  console.log(trackId.track_name);
+
   const size = {
     width: '20%',
     height: 300,
   };
-  const view = 'list'; // or 'coverart'
-  const theme = 'black'; // or 'white'
+  const view = 'list';
+  const theme = 'black';
+
   return (
     <div>
       <SpotifyPlayer
