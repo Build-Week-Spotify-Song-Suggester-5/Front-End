@@ -19,13 +19,13 @@ function EditPlayList() {
   const [suggestedSongs, setSuggestedSongs] = useState([])
   useEffect(() => {
     axios.get(`https://spotify-song-suggester-05.herokuapp.com/track/${trackId.id}`)
-    .then(response => {
-      console.log(response.data);
-      setSuggestedSongs(response.data);
-    })
-    .catch(error => {
-      console.log(error);
-    })
+      .then(response => {
+        console.log(response.data);
+        setSuggestedSongs(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }, [trackId]);
 
   const songList = songs.map((song, i) => {
