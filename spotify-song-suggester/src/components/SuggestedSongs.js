@@ -14,11 +14,10 @@ export const SuggestedSongs = props => {
 
   return (
     <div className="suggestions">
-        <h1>Suggested Songs</h1>
-        <h2>{props.title}</h2>
-        <div>
-        {songList}  
-
+      <h1>Suggested Songs</h1>
+      <div className='data-container'>
+        {songList}
+      </div>
     </div>
   );
 };
