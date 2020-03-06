@@ -137,6 +137,17 @@ nav a{
   border-radius: 30px;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  width: 20%;
+  padding: 0 1%;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
 header.dashboard{
   background-color: white;
   width: 60%;

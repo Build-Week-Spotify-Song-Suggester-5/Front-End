@@ -66,7 +66,7 @@ const SignUp = () => {
     return (
         <div>
             <header className='sign-in'>
-                <div className='greenbar'><h1>Spotify Song suggestor</h1></div>
+                <div className='greenbar'><a href='https://build-week-spotify-song-suggester-5.github.io/Marketing-UI/'>Home</a></div>
                 <h2>Sign Up</h2>
                 <p className={`${toggle ? "is-displayed" : ''}`}>{error}</p>
             </header>
